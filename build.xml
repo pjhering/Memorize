@@ -1,0 +1,82 @@
+<project name="Memorize"
+         basedir="."
+         default="all">
+
+    <property environment="env"/>
+    <condition property="DEBUG" value="${env.DEBUG}" else="on">
+        <isset property="env.DEBUG"/>
+    </condition>
+
+    <property name="assets" value="${basedir}/assets"/>
+    <property name="libraries" value="${basedir}/libraries"/>
+    <property name="source" value="${basedir}/source"/>
+    <property name="build" value="${basedir}/build"/>
+    <property name="binaries" value="${basedir}/dist"/>
+    <property name="viewer-main" value="memorize.viewer.Main"/>
+    <property name="editor-main" value="memorize.editor.Main"/>
+    <property name="viewer-jar" value="${binaries}/memorize-viewer.jar"/>
+    <property name="editor-jar" value="${binaries}/memorize-editor.jar"/>
+
+    <target name="clean">
+        <delete dir="${build}"/>
+        <delete dir="${binaries}"/>
+    </target>
+
+    <target name="prepare">
+        <mkdir dir="${build}"/>
+        <mkdir dir="${binaries}"/>
+    </target>
+
+    <target name="compile-viewer" depends="prepare">
+        <javac srcdir="${source}"
+               destdir="${build}"
+               excludes="**/editor/*"
+               includeantruntime="false"
+               debug="${DEBUG}">
+            <classpath>
+                <fileset dir="${libraries}" includes="**/*.jar"/>
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="compile-editor" depends="prepare">
+        <javac srcdir="${source}"
+               destdir="${build}"
+               excludes="**/viewer/*"
+               includeantruntime="false"
+               debug="${DEBUG}">
+            <classpath>
+                <fileset dir="${libraries}" includes="**/*.jar"/>
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="package-viewer" depends="compile-viewer">
+        <jar destfile="${viewer-jar}">
+            <fileset dir="${build}"/>
+            <fileset dir="${assets}"/>
+            <zipgroupfileset dir="${libraries}" includes="**/*.jar"/>
+            <manifest>
+                <attribute name="Main-Class" value="${viewer-main}"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="package-editor" depends="compile-editor">
+        <jar destfile="${editor-jar}">
+            <fileset dir="${build}"/>
+            <fileset dir="${assets}"/>
+            <zipgroupfileset dir="${libraries}" includes="**/*.jar"/>
+            <manifest>
+                <attribute name="Main-Class" value="${editor-main}"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="all" depends="clean, package-viewer, package-editor">
+    </target>
+
+    <target name="install" depends="all">
+    </target>
+
+</project>
