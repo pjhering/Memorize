@@ -10,8 +10,10 @@
     <property name="assets" value="${basedir}/assets"/>
     <property name="libraries" value="${basedir}/libraries"/>
     <property name="source" value="${basedir}/source"/>
+    <property name="tests" value="${basedir}/tests"/>
     <property name="build" value="${basedir}/build"/>
     <property name="binaries" value="${basedir}/dist"/>
+    <property name="tests-main" value="memorize.tests.Main"/>
     <property name="viewer-main" value="memorize.viewer.Main"/>
     <property name="editor-main" value="memorize.editor.Main"/>
     <property name="viewer-jar" value="${binaries}/memorize-viewer.jar"/>
@@ -76,7 +78,25 @@
     <target name="all" depends="clean, package-viewer, package-editor">
     </target>
 
-    <target name="install" depends="all">
+    <target name="compile-tests" depends="clean, compile-editor, compile-viewer">
+        <javac srcdir="${tests}"
+               destdir="${build}"
+               includeantruntime="false"
+               debug="${DEBUG}">
+            <classpath>
+                <fileset dir="${libraries}" includes="**/*.jar"/>
+                <pathelement path="${build}"/>
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="test" depends="compile-tests">
+        <java classname="${tests-main}">
+            <classpath>
+                <fileset dir="${libraries}" includes="**/*.jar"/>
+                <pathelement path="${build}"/>
+            </classpath>
+        </java>
     </target>
 
 </project>

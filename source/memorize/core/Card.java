@@ -1,18 +1,22 @@
 package memorize.core;
 
-import java.util.Date;
-
 public class Card
 {
     private String term;
     private String shortDefinition;
     private String longDefinition;
-    private Date lastViewOn;
     private int correctResponses;
     private int incorrectResponses;
 
     public Card ()
     {
+    }
+
+    public Card (String term, String shortDef, String longDef)
+    {
+        this.term = term;
+        this.shortDefinition = shortDef;
+        this.longDefinition = longDef;
     }
 
     public String getTerm () { return this.term; }
@@ -23,9 +27,6 @@ public class Card
 
     public String getLongDefinition () { return this.longDefinition; }
     public void setLongDefinition (String value) { this.longDefinition = value; }
-
-    public Date getLastViewOn () { return this.lastViewOn; }
-    public void setLastViewOn (Date value) { this.lastViewOn = value; }
 
     public int getCorrectResponses () { return this.correctResponses; }
     public void setCorrectResponses (int value) { this.correctResponses = value; }

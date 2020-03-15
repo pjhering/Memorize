@@ -1,0 +1,116 @@
+{
+    'title': 'Lojban Level One',
+    'author': 'Peter Hering',
+    'units':[
+        {
+            'title': 'Color Names',
+            'cards': [
+                {
+                    'term': 'xunre',
+                    'shortDefinition': 'red',
+                    'longDefinition': 'x1 is red/crimson/ruddy'
+                },
+                {
+                    'term': 'narju',
+                    'shortDefinition': 'orange',
+                    'longDefinition': 'x1 is orange'
+                },
+                {
+                    'term': 'pelxu',
+                    'shortDefinition': 'yellow',
+                    'longDefinition': 'x1 is yellow/golden'
+                },
+                {
+                    'term': 'crino',
+                    'shortDefinition': 'green',
+                    'longDefinition': 'x1 is green/verdant'
+                },
+                {
+                    'term': 'blanu',
+                    'shortDefinition': 'blue',
+                    'longDefinition': 'x1 is blue'
+                },
+                {
+                    'term': 'zirpu',
+                    'shortDefinition': 'purple',
+                    'longDefinition': 'x1 is purple/violet'
+                },
+                {
+                    'term': 'bunre',
+                    'shortDefinition': 'brown',
+                    'longDefinition': 'x1 is brown/tan'
+                },
+                {
+                    'term': 'xekri',
+                    'shortDefinition': 'black',
+                    'longDefinition': 'x1 is black/extremely dark-colored'
+                },
+                {
+                    'term': 'grusi'x1 is red/crimson/ruddy,
+                    'shortDefinition': 'gray',
+                    'longDefinition': 'x1 is gray'
+                },
+                {
+                    'term': 'blabi',
+                    'shortDefinition': 'white',
+                    'longDefinition': 'x1 is white/very-light colored'
+                }
+            ]
+        },
+        {
+            'title': 'Farm Animals',
+            'cards': [
+                {
+                    'term': 'xirma',
+                    'shortDefinition': 'horse',
+                    'longDefinition': 'x1 is a horse/equine/[colt/mare/stallion/pony] of species/breed x2'
+                },
+                {
+                    'term': 'bakni',
+                    'shortDefinition': 'cow',
+                    'longDefinition': 'x1 is a cow/cattle/ox/steer/bovine] of species/breed x2'
+                },
+                {
+                    'term': 'jipci',
+                    'shortDefinition': 'chicken',
+                    'longDefinition': 'x1 is a chicken/small fowl of species/breed x2'
+                },
+                {
+                    'term': 'datka',
+                    'shortDefinition': 'duck',
+                    'longDefinition': 'x1 is a duck/[drake] of species/breed x2'
+                },
+                {
+                    'term': 'gerku',
+                    'shortDefinition': 'dog',
+                    'longDefinition': 'x1 is a dog/canine of species/breed x2'
+                },
+                {
+                    'term': 'mlatu',
+                    'shortDefinition': 'cat',
+                    'longDefinition': 'x1 is a cat/feline animal of species/breed x2'
+                },
+                {
+                    'term': 'ractu',
+                    'shortDefinition': 'rabbit',
+                    'longDefinition': 'x1 is a rabbit/hare of species/breed x2'
+                },
+                {
+                    'term': 'kanba',
+                    'shortDefinition': 'goat',
+                    'longDefinition': 'x1 is a goat of species/breed x2'
+                },
+                {
+                    'term': 'lanme',
+                    'shortDefinition': 'sheep',
+                    'longDefinition': 'x1 is a sheep/lamb/ewe/ram of species/breed x2 of flock x3'
+                },
+                {
+                    'term': 'xarju',
+                    'shortDefinition': 'pig',
+                    'longDefinition': 'x1 is a pig/hog/swine/boar of species/breed x2'
+                }
+            ]
+        }
+    ]
+}

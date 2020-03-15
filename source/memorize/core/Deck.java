@@ -1,5 +1,6 @@
 package memorize.core;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Deck
@@ -10,6 +11,20 @@ public class Deck
 
     public Deck ()
     {
+        this.units = new ArrayList<> ();
+    }
+
+    public Deck (String title, String author)
+    {
+        this ();
+
+        this.title = title;
+        this.author = author;
+    }
+
+    public void add (Unit unit)
+    {
+        this.units.add (unit);
     }
 
     public String getTitle () { return this.title; }
